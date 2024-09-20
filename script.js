@@ -1,5 +1,3 @@
-
-
 var APokemonId = 1;
 document.getElementById('pokemonInput').addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
@@ -8,7 +6,6 @@ document.getElementById('pokemonInput').addEventListener('keypress', function (e
 });
 
 function fetchPokemon(pokemonId = null) {
-
     const pokemonInput = pokemonId || document.getElementById('pokemonInput').value.toLowerCase();
     const pokemonDataDiv = document.getElementById('pokemonData');
 
@@ -29,7 +26,7 @@ function fetchPokemon(pokemonId = null) {
             const pokemonHTML = `
                 <h2>${data.name.charAt(0).toUpperCase() + data.name.slice(1)} (#${data.id})</h2>
                 
-                <img src="${data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']}" alt="${data.name}">
+                <img src="${data['sprites']['front_default']}" alt="${data.name}"> <!-- Imagem estática -->
                 <p><strong>Altura:</strong> ${data.height / 20} metros</p>
                 <p><strong>Peso:</strong> ${data.weight / 20} kg</p>
                 <p><strong>Tipo:</strong> ${data.types.map(type => type.type.name).join(', ')}</p>
@@ -37,11 +34,11 @@ function fetchPokemon(pokemonId = null) {
             pokemonDataDiv.innerHTML = pokemonHTML;
             changeDivColor(data.types.map(type => type.type.name));
         })
-
         .catch(error => {
             pokemonDataDiv.innerHTML = `<p>${error.message}</p>`;
         });
 }
+
 function changeDivColor(types) {
     const pokemonDataDiv = document.getElementById('pokemonData');
     pokemonDataDiv.classList.remove('fire', 'water', 'grass', 'electric', 'default', 'bug', 'ground', 'psychic', 'ghost', 'ice', 'dragon', 'rock', 'dark');
@@ -54,7 +51,7 @@ function changeDivColor(types) {
         pokemonDataDiv.classList.add('grass');
     } else if (types.includes('electric')) {
         pokemonDataDiv.classList.add('electric');
-    } else if (types.includes('defaut')) {
+    } else if (types.includes('default')) {
         pokemonDataDiv.classList.add('default');
     } else if (types.includes('bug')) {
         pokemonDataDiv.classList.add('bug');
@@ -71,10 +68,9 @@ function changeDivColor(types) {
     } else if (types.includes('rock')) {
         pokemonDataDiv.classList.add('rock');
     } else if (types.includes('dark')) {
-        pokemonDataDiv.classList.add('dark')
+        pokemonDataDiv.classList.add('dark');
     }
 }
-
 
 function nextPokemon() {
     currentPokemonId += 1;
@@ -83,7 +79,7 @@ function nextPokemon() {
 
 function previousPokemon() {
     if (currentPokemonId > 1) {
-        currentPokemonId -= 1; // currentPokemonId = currentPokemonId - 1
+        currentPokemonId -= 1;
         fetchPokemon(currentPokemonId);
     }
 }
