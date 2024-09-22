@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POOCKE LIST</title>
+    <title>Buscando Pokémon</title>
 </head>
 <link rel="stylesheet" href="style.css">
 
@@ -14,17 +14,14 @@
         <h1> Pokémon </h1>
 
         <input type="text" id="pokemonInput" placeholder="Digite o nome ou ID do Pokémon desejado!">
-        <div class="caixa">
-        <button onclick="fetchPokemon()">BUSCAR POKEMON</button>
-        <button onclick="previousPokemon()">VOLTAR</button>
-        <button onclick="nextPokemon()">PRÓXIMO</button>
+        
+        <button onclick="fetchPokemon()">Buscar Pokémon</button>
+        <button onclick="previousPokemon()">Anterior</button>
+        <button onclick="nextPokemon()">Próximo</button>
     </div>
     </div>
     <div id="pokemonData" class="pokemon-data"></div>
-    
-
-
-
+    <div class="caixa"></div>
 
 </body>
 <script src="script.js"></script>
