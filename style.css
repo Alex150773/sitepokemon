@@ -29,12 +29,12 @@ body {
     margin: 5px;
    
    }
+   
    button:hover {
    background-color: #ff0000;
     }
 
-   
-   .pokemon-data > img {
+    .pokemon-data > img {
      align-self: center;
      image-rendering: pixelated;
      max-width: 100%;
@@ -45,7 +45,7 @@ body {
      justify-content: center;
    }
 
-    .pokemon-data > img {
+   .pokemon-data > img {
     align-self: center;
     image-rendering: pixelated;
     max-width: 100%;
@@ -64,11 +64,11 @@ body {
    .water { background-color: #0680f1fd; }
    .grass { background-color: #00ff11; }
    .electric { background-color: #f7ce05; }
-   .default { background-color: #f0f0f0; }
-   .bug { background-color: rgb(6, 43, 6);}
+   .default { background-color: #ece5e5; }
+   .bug { background-color: rgb(44, 117, 44);}
    .ground{ background-color: saddlebrown;}
    .psychic{ background-color: rgb(87, 6, 107);}
-   .ghost{ background-color: rgb(0, 0, 0);}
+   .ghost{ background-color: rgb(99, 86, 86);}
    .ice{background-color: rgb(0, 255, 213);}
    .dragon{ background-color: rgb(255, 0, 0);}
    .rock{ background-color: rgb(136, 60, 25);}
